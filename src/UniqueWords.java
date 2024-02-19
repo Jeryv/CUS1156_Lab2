@@ -10,12 +10,17 @@ public class UniqueWords
    public static int countUnique(ArrayList<String> list)
    {
 	  int count = 0;
-	  
-      for (int i = 0; i < list.size(); i++)
-      {		 for (int j = 0; j < list.size(); j++)
-		 {
-			
+      for (int i = 0; i < list.size(); i++) {
+    	 boolean unique = true;
+    	  for (int j = 0; j < list.size(); j++) {
+    		  if(list.get(i).equals(list.get(j))) {
+    			  unique = false;
+    			  break;
+    		  }
 		 }
+    	  if(unique) {
+    		  count++;
+    	  }
       }
 	  return count;
    }
